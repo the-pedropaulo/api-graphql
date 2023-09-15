@@ -3,7 +3,7 @@ import { ApolloServer } from "apollo-server";
 import { buildSchema } from "type-graphql";
 import { AppointmentResolver } from "./resolvers/appointments-resolver";
 import path from 'node:path'
-
+require('dotenv').config()
 
 async function bootstrap() {
 
