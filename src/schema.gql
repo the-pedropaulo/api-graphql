@@ -4,7 +4,7 @@
 # -----------------------------------------------
 
 type Appointment {
-  customer: Customer!
+  User: User!
   endsAt: DateTime!
   startsAt: DateTime!
 }
@@ -13,10 +13,6 @@ input CreateAppointmentInput {
   customerId: String!
   endsAt: DateTime!
   startsAt: DateTime!
-}
-
-type Customer {
-  name: String!
 }
 
 """
@@ -30,4 +26,11 @@ type Mutation {
 
 type Query {
   appointments: [Appointment!]!
+  getAllUsers: [User!]!
+}
+
+type User {
+  email: String!
+  id: ID!
+  name: String
 }
