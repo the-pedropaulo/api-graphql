@@ -24,8 +24,20 @@ type Mutation {
   createAppointment(data: CreateAppointmentInput!): Appointment!
 }
 
+type Post {
+  author: User
+  content: String
+  createdAt: DateTime!
+  id: ID!
+  published: Boolean
+  title: String!
+  updatedAt: DateTime!
+  viewCount: Int!
+}
+
 type Query {
   appointments: [Appointment!]!
+  getAllPosts: [Post!]!
   getAllUsers: [User!]!
 }
 
