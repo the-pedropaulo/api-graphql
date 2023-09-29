@@ -4,7 +4,7 @@
 # -----------------------------------------------
 
 type Appointment {
-  customer: Customer!
+  User: User!
   endsAt: DateTime!
   startsAt: DateTime!
 }
@@ -13,10 +13,6 @@ input CreateAppointmentInput {
   customerId: String!
   endsAt: DateTime!
   startsAt: DateTime!
-}
-
-type Customer {
-  name: String!
 }
 
 """
@@ -28,6 +24,25 @@ type Mutation {
   createAppointment(data: CreateAppointmentInput!): Appointment!
 }
 
+type Post {
+  author: User
+  content: String
+  createdAt: DateTime!
+  id: ID!
+  published: Boolean
+  title: String!
+  updatedAt: DateTime!
+  viewCount: Int!
+}
+
 type Query {
   appointments: [Appointment!]!
+  getAllPosts: [Post!]!
+  getAllUsers: [User!]!
+}
+
+type User {
+  email: String!
+  id: ID!
+  name: String
 }

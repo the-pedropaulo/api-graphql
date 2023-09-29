@@ -1,10 +1,10 @@
 import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql";
 import { CreateAppointmentInput } from "../dtos/inputs/create-appointment-input";
 import { Appointment } from "../dtos/models/appointment-model";
-import { Customer } from "../dtos/models/customer-model";
+import { User } from "../dtos/models/user-model";
 
 @Resolver(() => Appointment)
-export  class AppointmentResolver {
+export class AppointmentResolver {
   constructor() {}
 
   @Query(() => [Appointment])
@@ -27,8 +27,8 @@ export  class AppointmentResolver {
     return appointment;
   }
 
-  @FieldResolver(() => Customer)
-  async customer(@Root() appointment: Appointment) {
+  @FieldResolver(() => User)
+  async User(@Root() appointment: Appointment) {
     console.log(appointment)
     return {
       name: 'Pedro Paulo'
