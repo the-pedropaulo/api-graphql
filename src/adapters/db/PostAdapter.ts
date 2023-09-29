@@ -1,5 +1,5 @@
 import { Post } from "../../dtos/models/post-model";
 
-export interface IPostRepository {
+export interface PostAdapter {
   allPosts(): Promise<Post[]>;
 }

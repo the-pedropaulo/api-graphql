@@ -1,5 +1,5 @@
 import { User } from "../../dtos/models/user-model";
 
-export interface IUserRepository {
+export interface UserAdapter {
   allUsers(): Promise<User[]>;
 }
