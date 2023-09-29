@@ -22,6 +22,7 @@ scalar DateTime
 
 type Mutation {
   createAppointment(data: CreateAppointmentInput!): Appointment!
+  createUser(data: UserCreateInput!): User!
 }
 
 type Post {
@@ -44,5 +45,10 @@ type Query {
 type User {
   email: String!
   id: ID!
+  name: String
+}
+
+input UserCreateInput {
+  email: String!
   name: String
 }

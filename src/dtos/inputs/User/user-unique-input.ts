@@ -1,7 +1,7 @@
 import { Field, InputType } from "type-graphql"
 
 @InputType()
-class UserUniqueInput {
+export class UserUniqueInput {
   @Field({ nullable: true })
   id: number
 

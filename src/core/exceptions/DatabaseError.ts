@@ -1,9 +1,8 @@
-class DatabaseRequestException extends Error {
+class DatabaseRequestException extends AppError {
   constructor(
     public message: string, 
-    public httpCode = 500
+    public httpCode = 422
     ) {
-    super(message);
-    this.status = httpCode;
+    super(message, "Database error");
   }
 }

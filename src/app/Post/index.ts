@@ -1,11 +1,8 @@
-import { PrismaClient } from "@prisma/client";
 import { PrismaPostRepository } from "../../repositories/prisma/PrismaPostRepository";
 import { PostService } from "./PostService";
+import { context } from "../../repositories/prisma/context"
 
-const prisma = new PrismaClient();
-
-const prismaRepository = new PrismaPostRepository(prisma);
-
+const prismaRepository = new PrismaPostRepository(context.prisma);
 const postService = new PostService(prismaRepository);
 
 export { postService }
